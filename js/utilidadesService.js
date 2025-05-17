@@ -419,7 +419,7 @@ class UtilidadesService
       document.querySelector(datos.querySelector).innerHTML = "";   // Limpia
   
       let ul = document.createElement("ul");
-      ul.setAttribute("class", "pagination");
+      ul.setAttribute("class", "pagination d-flex flex-wrap");
     
       let cont = 0;
   
