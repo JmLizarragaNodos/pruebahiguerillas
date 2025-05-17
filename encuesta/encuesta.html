@@ -16,87 +16,93 @@
 	<div id="menu-lateral"></div> 
 
 	<div id="contenido"> 
-	<div class="container mt-4"> 
-	<br/> 
-	<button name="crear" onclick="abrirModalCrear()" class="btn btn-success"> <span> </span> Agregar Nuevo Encuesta</button> 
-	<br/><br/><br/> 
+		<div class="container-fluid mt-4">
+			
+			<div class="card">
+				<div class="card-body">
+			
+					<button name="crear" onclick="abrirModalCrear()" class="btn btn-success"> <span> </span> Agregar Nuevo Encuesta</button> 
+					<br/><br/><br/> 
 
-	<div id="filtroBusqueda" class="row"> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Nombre</label> 
-				<input name="nombre" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Direccion</label> 
-				<input name="direccion" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Telefono</label> 
-				<input name="telefono" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Nombre Contacto Emergencia</label> 
-				<input name="nombreContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Relacion Parentesco Contacto Emergencia</label> 
-				<input name="relacionParentescoContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Direccion Contacto Emergencia</label> 
-				<input name="direccionContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Telefono Email Contacto Emergencia</label> 
-				<input name="telefonoEmailContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Esta Enterado Contacto Emergencia</label> 
-			<select name="estaEnteradoContactoEmergencia" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
-				<option value="">- todos -</option> 
-				<option value="true">Si</option> 
-				<option value="false">No</option> 
-			</select> 
-			</div> 
-		</div> 
-		<div class="col-md-4"> 
-			<div class="form-group"> 
-				<label>Revisado</label> 
-			<select name="revisado" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
-				<option value="">- todos -</option> 
-				<option value="true">Si</option> 
-				<option value="false">No</option> 
-			</select> 
-			</div> 
-		</div> 
-	</div> 
+					<div id="filtroBusqueda" class="row"> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Nombre</label> 
+								<input name="nombre" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Direccion</label> 
+								<input name="direccion" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Telefono</label> 
+								<input name="telefono" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Nombre Contacto Emergencia</label> 
+								<input name="nombreContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Relacion Parentesco Contacto Emergencia</label> 
+								<input name="relacionParentescoContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Direccion Contacto Emergencia</label> 
+								<input name="direccionContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Telefono Email Contacto Emergencia</label> 
+								<input name="telefonoEmailContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Esta Enterado Contacto Emergencia</label> 
+							<select name="estaEnteradoContactoEmergencia" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
+								<option value="">- todos -</option> 
+								<option value="true">Si</option> 
+								<option value="false">No</option> 
+							</select> 
+							</div> 
+						</div> 
+						<div class="col-md-4"> 
+							<div class="form-group"> 
+								<label>Revisado</label> 
+							<select name="revisado" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
+								<option value="">- todos -</option> 
+								<option value="true">Si</option> 
+								<option value="false">No</option> 
+							</select> 
+							</div> 
+						</div> 
+					</div> 
 
-	<br/> 
-	<h4>Listado de Encuesta</h4> 
-	<br/> 
+					<br/> 
+					<h4>Listado de Encuesta</h4> 
+					<br/> 
 
-	<div id="div_numeros_paginacion"></div> 
-	<br/> 
+					<div id="div_numeros_paginacion"></div> 
+					<br/> 
 
-	<div class="table-responsive"> 
-	<table id="tablaPrincipal" class="table table-bordered"></table> 
-	</div> 
-	</div> 
+					<div class="table-responsive"> 
+						<table id="tablaPrincipal" class="table table-bordered"></table> 
+					</div> 
+				</div>
+			</div>
+
+		</div> 
 	</div> 
 
 	<div id="modalCrearEditar" class="modal fade in" data-backdrop="static" data-keyboard="false" style="overflow-y: scroll;" role="dialog"> 
