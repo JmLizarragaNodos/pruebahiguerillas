@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inicio</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/estilos.css">
+	<link rel="stylesheet" href="../css/menu-lateral.css">
+	<link rel="stylesheet" href="../plugins/jquery-ui/jquery-ui.min.css">
+</head>
+
+<body>
+	<div style="display: none" id="loading-spinner"></div>
+	<div id="menu-lateral"></div>
+
+	<div id="contenido">
+		<div class="container mt-4">
+
+			<div class="card">
+				<div class="card-header">Inicio</div>
+				<div class="card-body">
+					<h5 class="card-title">Los Romeros</h5>
+					<p class="card-text">Probando</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/menu-lateral.js"></script>
+
+	<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../js/fechaService.js"></script>
+	<script src="../js/utilidadesService.js"></script> 
+
+	<script>
+
+		let util = new UtilidadesService();
+		let fechaService = new FechaService();
+
+		window.onload = () => 
+		{ 
+			menuLateral({ querySelector: '#menu-lateral' }); 
+		}; 
+
+	</script>
+	
+</body>
+
+</html>

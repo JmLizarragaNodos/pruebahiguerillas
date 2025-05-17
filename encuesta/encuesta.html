@@ -1,0 +1,213 @@
+<!doctype html> 
+<html lang="es"> 
+<head> 
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Encuesta</title> 
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" /> 
+	<link rel="stylesheet" href="../css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="../css/select2.min.css"> 
+	<link rel="stylesheet" href="../css/estilos.css"> 
+	<link rel="stylesheet" href="../css/menu-lateral.css"> 
+	<link rel="stylesheet" href="../plugins/jquery-ui/jquery-ui.min.css"> 
+</head> 
+<body> 
+	<div style="display: none" id="loading-spinner"></div> 
+	<div id="menu-lateral"></div> 
+
+	<div id="contenido"> 
+	<div class="container mt-4"> 
+	<br/> 
+	<button name="crear" onclick="abrirModalCrear()" class="btn btn-success"> <span> </span> Agregar Nuevo Encuesta</button> 
+	<br/><br/><br/> 
+
+	<div id="filtroBusqueda" class="row"> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Nombre</label> 
+				<input name="nombre" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Direccion</label> 
+				<input name="direccion" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Telefono</label> 
+				<input name="telefono" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Nombre Contacto Emergencia</label> 
+				<input name="nombreContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Relacion Parentesco Contacto Emergencia</label> 
+				<input name="relacionParentescoContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Direccion Contacto Emergencia</label> 
+				<input name="direccionContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Telefono Email Contacto Emergencia</label> 
+				<input name="telefonoEmailContactoEmergencia" onkeyup="resetearPaginacion(); obtenerListaPrincipal()" type="text" class="form-control" /> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Esta Enterado Contacto Emergencia</label> 
+			<select name="estaEnteradoContactoEmergencia" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
+				<option value="">- todos -</option> 
+				<option value="true">Si</option> 
+				<option value="false">No</option> 
+			</select> 
+			</div> 
+		</div> 
+		<div class="col-md-4"> 
+			<div class="form-group"> 
+				<label>Revisado</label> 
+			<select name="revisado" onchange="resetearPaginacion(); obtenerListaPrincipal()" class="form-control"> 
+				<option value="">- todos -</option> 
+				<option value="true">Si</option> 
+				<option value="false">No</option> 
+			</select> 
+			</div> 
+		</div> 
+	</div> 
+
+	<br/> 
+	<h4>Listado de Encuesta</h4> 
+	<br/> 
+
+	<div id="div_numeros_paginacion"></div> 
+	<br/> 
+
+	<div class="table-responsive"> 
+	<table id="tablaPrincipal" class="table table-bordered"></table> 
+	</div> 
+	</div> 
+	</div> 
+
+	<div id="modalCrearEditar" class="modal fade in" data-backdrop="static" data-keyboard="false" style="overflow-y: scroll;" role="dialog"> 
+		<div class="modal-dialog mw-100 w-90" style="width: 90%;"> 
+			<div class="modal-content"> 
+				<div class="modal-header"> 
+					<h4 name="titulo" class="modal-title">Título</h4> 
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+				</div> 
+				<div class="modal-body"> 
+					<div class="row"> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Nombre</label> 
+								<textarea maxlength="500" name="nombre" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Direccion</label> 
+								<textarea maxlength="500" name="direccion" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Telefono</label> 
+								<textarea maxlength="500" name="telefono" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Nombre Contacto Emergencia</label> 
+								<textarea maxlength="500" name="nombreContactoEmergencia" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Relacion Parentesco Contacto Emergencia</label> 
+								<textarea maxlength="500" name="relacionParentescoContactoEmergencia" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Direccion Contacto Emergencia</label> 
+								<textarea maxlength="500" name="direccionContactoEmergencia" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Telefono Email Contacto Emergencia</label> 
+								<textarea maxlength="500" name="telefonoEmailContactoEmergencia" onkeyup="objeto[this.name] = this.value" rows="4" class="form-control" autocomplete="off"></textarea> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Esta Enterado Contacto Emergencia</label> 
+								<select onchange="objeto[this.name] = this.value" name="estaEnteradoContactoEmergencia" class="form-control"> 
+									<option value="">- Seleccione -</option> 
+									<option value="true">Si</option> 
+									<option value="false">No</option> 
+								</select> 
+							</div> 
+						</div> 
+						<div class="col-md-4 mb-3"> 
+							<div class="form-group"> 
+								<label>Revisado</label> 
+								<select onchange="objeto[this.name] = this.value" name="revisado" class="form-control"> 
+									<option value="">- Seleccione -</option> 
+									<option value="true">Si</option> 
+									<option value="false">No</option> 
+								</select> 
+							</div> 
+						</div> 
+					</div> 
+
+				</div> 
+				<div class="modal-footer"> 
+					<button type="button" onclick="guardar()" class="btn btn-primary">Guardar</button> 
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+
+	<div id="modalEliminar" class="modal" tabindex="-1"> 
+		<div class="modal-dialog"> 
+			<div class="modal-content"> 
+				<div class="modal-header"> 
+					<h5 class="modal-title">Eliminar</h5> 
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+				</div> 
+				<div class="modal-body"> 
+					<p>¿Desea realmente eliminar este registro?</p> 
+				</div> 
+				<div class="modal-footer"> 
+					<input type="hidden" name="id" /> 
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> 
+					<button type="button" onclick="eliminar()" class="btn btn-primary">Eliminar</button> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+
+	<script src="../js/jquery-3.6.0.min.js"></script> 
+	<script src="../js/bootstrap.bundle.min.js"></script> 
+	<script src="../js/select2.min.js"></script> 
+	<script src="../js/utilidadesService.js"></script> 
+	<script src="../js/menu-lateral.js"></script> 
+	<script src="../plugins/jquery-ui/jquery-ui.min.js"></script> 
+	<script src="../js/fechaService.js"></script> 
+	<script src="encuesta.js"></script> 
+</body> 
+
+</html> 

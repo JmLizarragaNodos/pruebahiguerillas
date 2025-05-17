@@ -1,0 +1,12 @@
+
+Probar aca en local:
+http://localhost:8087/DesarrollosPhp/pruebahiguerillas/inicio/inicio.html
+
+
+La clave es poner esto en una clase, ejemplo Conexion.php
+
+header("Access-Control-Allow-Origin: *"); // Permite solicitudes desde cualquier origen
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+
