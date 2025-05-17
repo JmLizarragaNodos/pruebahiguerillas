@@ -125,7 +125,31 @@ function clickAgrupadorNav(e)
     } 
 }
 
-function abrirCerrarNav() 
+function abrirCerrarNav()  // 17-5-2025
+{
+    const nav = document.querySelector('nav');
+    const body = document.querySelector('body');
+    const contenidoElement = document.querySelector('#contenido');
+
+    let anchoPantalla = window.innerWidth;
+
+    if (anchoPantalla <= 600)
+    {
+        nav.style.left = (estaAbiertoNav) ? '0px' : '-250px';
+        // contenidoElement.style.marginLeft = (!estaAbiertoNav) ? '0px' : '250px'; // Comenta o elimina esta línea
+    }
+    else
+    {
+        nav.style.left = (!estaAbiertoNav) ? '0px' : '-250px';
+        contenidoElement.style.marginLeft = (estaAbiertoNav) ? '0px' : '250px';
+    }
+
+    estaAbiertoNav = !estaAbiertoNav;
+    body.classList.toggle('menu-open');
+}
+
+/*
+function abrirCerrarNav()  // Original
 {
     const nav = document.querySelector('nav');
     const body = document.querySelector('body');
@@ -147,3 +171,4 @@ function abrirCerrarNav()
     estaAbiertoNav = !estaAbiertoNav;
     body.classList.toggle('menu-open');
 }
+    */
