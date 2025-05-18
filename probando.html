@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iframe con Dominio Dinámico</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="miIframe"></iframe>
+
+  <script>
+    const dominio = prompt("Seleccione el dominio", "");
+
+    if (dominio) {
+      const url = `https://${dominio}/Desarrollos/LosRomeros_2025/encuesta/encuesta.html`;
+      document.getElementById("miIframe").src = url;
+    } else {
+      document.body.innerHTML = "<h2>No se seleccionó un dominio válido.</h2>";
+    }
+  </script>
+</body>
+</html>
